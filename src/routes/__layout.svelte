@@ -1,15 +1,14 @@
 <script>
-	import "fluent-svelte/theme.css";
+	import Nav from "../components/nav.svelte"
 </script>
-<nav>
-	<a href="/">Home</a>
-	<a href="/about">About</a>
-	<a href="/settings">Settings</a>
-</nav>
-
-<slot></slot>
-
-<style>
+<div class="bg-gradient-to-r from-indigo-900 via-purple-500 to-pink-500">
+	<div class=" p-8 max-w-6xl mx-auto">
+		<Nav/>
+		<slot>
+		</slot>
+	</div>
+</div>
+	<style>
     @tailwind base;
     @tailwind components;
     @tailwind utilities;
