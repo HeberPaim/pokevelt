@@ -1,12 +1,11 @@
 <script>
-import {pokemon} from "../stores/pokemart";
-import PokemanCard from "../components/pokemanCard.svelte"
-
+    import PokemanCard from "../components/pokemanCard.svelte"
+    import {pokemon, fetchPokemon} from "../stores/pokemart";
+    
 let searchTerm = "";
 let filteredPokemon = [];
 
 $: {
-    console.log(searchTerm);
     if(searchTerm){
         filteredPokemon = $pokemon.filter( pokeman => pokeman.name.toLowerCase().includes(searchTerm.toLowerCase()));
     }
@@ -14,9 +13,8 @@ $: {
         filteredPokemon = [...$pokemon];
     }
 }
+fetchPokemon();
 </script>
-
-
 
 <svelte:head>   
     <title> Pokedex </title>
