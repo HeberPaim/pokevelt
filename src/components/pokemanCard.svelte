@@ -5,4 +5,3 @@
     <img h-40 w-40 class="animate-bounce" src={pokeman.image} alt={pokeman.name}>
     <h2>#{pokeman.id}:  {pokeman.name}</h2>
 </a>
-
