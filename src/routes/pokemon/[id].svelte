@@ -14,6 +14,8 @@
     import { object_without_properties } from "svelte/internal";
     export let data;
     let type = data.types[0].type.name;
+    let spin;
+    
 </script>
 <svelte:head>
 	<title>Pokedex - {data.name}</title>
@@ -22,13 +24,14 @@
 <div class="flex flex-col items-center">
 
     <h1 class="text-4xl text-center my-8 uppercase">{data.name}</h1>
-    <img class="card-image animate-spin" alt={data.name} src={data.sprites.other['official-artwork']['front_default']}>
+    <img class="card-image" alt={data.name} src={data.sprites.other['official-artwork']['front_default']}>
     <p>
         Type: <span class ="poketype rounded-sm p-1 border-2 text-xs border-slate-500/50 {type}"> {type.toUpperCase()}</span> 
         {#if (typeof data.types[1] != 'undefined')}
         <span class ="poketype rounded-sm p-1 border-2 text-xs border-slate-500/50 {data.types[1].type.name}"> {data.types[1].type.name.toUpperCase()}</span> 
         {/if}
-        | Height: <strong>{data.height}</strong> | Weight: <strong>{data.weight}</strong>
+        | Height: <strong>{data.height}</strong> | 
+        Weight: <strong>{data.weight}</strong> 
     </p>
 </div>
 
