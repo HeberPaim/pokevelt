@@ -6,6 +6,10 @@
     <h2>#{pokeman.id}:  {pokeman.name}</h2>
 </a>
 <style>
+    a{
+        background: linear-gradient(35deg, rgba(165, 253, 253, 0.65) , rgba(255, 176, 176, 0.65));
+        
+    }
     :global(h2.dark-mode){
         background-color: indigo;
     }
