@@ -1,10 +1,7 @@
 <script context="module">
     export async function load({fetch, params})  {
-        console.log('loadzada');
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.id}`);
         const data = await response.json();
-        console.log('batatao');
-        console.log(data);
         return {
             props: { data }
             }

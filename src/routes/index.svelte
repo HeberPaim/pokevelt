@@ -8,7 +8,7 @@
 
 $: {
     if(searchTerm != undefined){
-        filteredPokemon = $pokemon.filter( pokeman => pokeman.name.toLowerCase().includes(searchTerm.toLowerCase()));
+        filteredPokemon = $pokemon.filter( pokeman => pokeman.name.toLowerCase().includes(searchTerm.toLowerCase()) || (pokeman.id+'').includes(searchTerm));
     }
     else {
         filteredPokemon = [...$pokemon];
